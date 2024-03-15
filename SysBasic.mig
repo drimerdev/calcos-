@@ -1,0 +1,25 @@
+sys.link(url(./assembly.mig))
+sys.set(engine."./prg.asm") {
+    MeowType() {
+        MigAsm.micro(const option = BASIC (value = ["2"]))
+        calc.mem(
+                    adress(asm.global) {
+                        keyboard."0x2f",
+                        display."0x3r",
+                        panel."0x044ef",
+                        mov: 10,
+                        mov: 20,
+                        mov: 30,
+                        mov: ##complet.dec
+                    })
+
+                     MigAsm.micro.panel.display.key(
+                        export $BYTE
+                        function $BYTE() {
+                            sys.BYTE = (use.sys = equiv(bios, mem))
+                        }
+                        SysScaller.initial.set(ext = (".bas"), BASIC(sys.engine(start.session(code = "#"))))
+                        SysScaller.micro.panel(set.initial.msg("Calc BASIC" display.print($BYTE, $BASIC)))
+        )
+    }
+}

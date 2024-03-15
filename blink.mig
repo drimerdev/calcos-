@@ -1,0 +1,16 @@
+sys.set(engine."./prg.asm") {
+    plug.call([Calc]),
+    calc.display (
+        display.print[count 2, 0, _ = set.char];
+    ); else.fun() {
+        function blink() {
+            MeowType = (
+                const blink = display.print(count #)
+                var blink
+                blink.delay = 0.002ms
+            )
+        }
+    }
+};
+
+if(display.blink(0,1ms)) = (set "0" to "-" #);
